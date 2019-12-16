@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<title>Postman Request Handler</title>
+		<link rel="stylesheet" href="prism.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<style>
+			body {
+				background: #41295a;
+				background: -webkit-linear-gradient(left, #2F0743, #41295a);
+				background: -o-linear-gradient(left, #2F0743, #41295a);
+				background: linear-gradient(to right, #2F0743, #41295a);
+				color: #fff;
+			}
+			pre {
+				max-height: 35vh;
+			}
+			h1 {
+				line-height: 1.2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="mt-3 text-center">Postman</h1>
+			<hr class="bg-white w-25">
+			<form class="mt-4">
+				<div class="form-group row">
+					<label for="url" class="col-sm-2 col-form-label">URL</label>
+					<div class="col-sm-10">
+						<input type="url" class="form-control" id="url">
+					</div>
+				</div>
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Request Type</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="requestType" id="get" value="GET" checked>
+								<label class="form-check-label" for="get">
+									GET
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="requestType" id="post" value="POST">
+								<label class="form-check-label" for="post">
+									POST
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="contentType" id="json" value="JSON" checked>
+								<label class="form-check-label" for="json">
+									JSON
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="contentType" id="params" value="Custom Parameters">
+								<label class="form-check-label" for="params">
+									Custom Parameters
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<div id="parameters">
+					<div class="form-row my-3">
+						<label for="params1" class="col-sm-2 col-form-label">Parameter 1</label>
+						<div class="col-md-4">
+							<input type="text" id="key1" class="form-control" placeholder="Key 1..">
+						</div>
+						<div class="col-md-4">
+							<input type="text" id="value1" class="form-control" placeholder="Value 1..">
+						</div>
+						<button class="btn btn-warning" id="plusButton">+</button>
+					</div>
+					
+					<div id="moreParams">
+						
+					</div>
+				</div>
+				<div class="form-row my-3" id="jsonbox">
+					<label for="jsonreq" class="col-sm-2 col-form-label">JSON Request</label>
+					<div class="col-sm-8">
+						<textarea class="form-control" id="jsonreq"></textarea>
+					</div>
+				</div>
+				
+				<div class="text-center">
+					<button type="submit" id="submitButton" class="btn btn-info w-25">Submit</button>
+				</div>
+
+				<!-- Response Box -->
+				<div class="my-3" id="responsebox">
+					<label for="response" class="col-form-label"><h3>Response :</h3></label>
+					<div class="col-sm-12">
+						<pre>
+						<code class="language-javascript" id="responsePrism">
+						Please Wait. Fetching Data...
+						</code>
+					</pre>
+				</div>
+				</div>
+			</form>
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="app.js"></script>
+		<script src="prism.js"></script>
+	</body>
+</html>
